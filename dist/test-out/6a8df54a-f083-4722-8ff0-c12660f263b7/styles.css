@@ -1,0 +1,47 @@
+@import "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap";
+
+/* src/styles.css */
+:root {
+  --black: #111111;
+  --black-soft: #1c1c1c;
+  --white: #ffffff;
+  --muted: #6f6f6f;
+  --border: #e5e5e5;
+  --surface: #f6f6f4;
+  --shadow: 0 18px 45px rgba(0,0,0,.08);
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  color: var(--black);
+  background: #fafafa;
+}
+a {
+  color: inherit;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+.section-label {
+  color: var(--muted);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.page-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+}
+
+/* angular:styles/global:styles */
+/*# sourceMappingURL=styles.css.map */

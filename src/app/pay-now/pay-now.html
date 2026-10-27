@@ -1,0 +1,41 @@
+<section class="checkout-page container py-5">
+  <div class="checkout-heading">
+    <span class="section-label">Secure checkout</span>
+    <h1 class="page-title mt-2">Complete your order</h1>
+  </div>
+  <div class="checkout-layout">
+    <div class="checkout-form">
+      <div class="form-section">
+        <h2>Payment method</h2>
+        <div class="payment-options">
+          <button class="payment-option active">Card</button
+          ><button class="payment-option">ABA</button
+          ><button class="payment-option">ACLEDA</button>
+        </div>
+        <label>Card number<input placeholder="1234 5678 9012 3456" /></label>
+        <div class="form-row">
+          <label>Expiry date<input placeholder="MM / YY" /></label
+          ><label>CVV<input placeholder="•••" type="password" /></label>
+        </div>
+        <label>Cardholder name<input placeholder="Full name" /></label>
+      </div>
+      <button class="pay-button" (click)="paynow()">
+        Pay {{getTotal() | currency:'USD'}} securely
+      </button>
+    </div>
+    <aside class="order-card">
+      <span>Order summary</span>@for(item of cardService.getCarditem();track
+      item.id){@if(item.is_select){
+      <div class="mini-item">
+        <img [src]="item.image" [alt]="item.title" />
+        <div><b>{{item.title}}</b><small>Qty {{item.qty}}</small></div>
+        <strong>{{item.price * item.qty | currency:'USD'}}</strong>
+      </div>
+      }}
+      <div class="summary-line">
+        <span>Total</span><strong>{{getTotal() | currency:'USD'}}</strong>
+      </div>
+      <p>🔒 Your payment information is protected.</p>
+    </aside>
+  </div>
+</section>

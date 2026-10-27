@@ -1,0 +1,74 @@
+<section class="cart-page container py-5">
+  <div class="cart-heading">
+    <div>
+      <span class="section-label">Your selection</span>
+      <h1 class="page-title mt-2">Shopping Cart</h1>
+    </div>
+    <a routerLink="/products">Continue shopping →</a>
+  </div>
+
+  @if (cardService.getCarditem().length === 0) {
+  <div class="empty-cart">
+    <div class="empty-icon">+</div>
+    <h2>Your cart is empty</h2>
+    <p>Add something you love and it will appear here.</p>
+    <a routerLink="/products" class="dark-button">Start shopping</a>
+  </div>
+  } @else {
+  <div class="cart-actions">
+    <span
+      >{{cardService.selectedCount}} of {{cardService.getCarditem().length}}
+      selected</span
+    >
+    @if (cardService.allSelected) {
+    <button type="button" (click)="cardService.clearSelection()">
+      Clear selection
+    </button>
+    } @else {
+    <button type="button" (click)="cardService.selectAll()">Select all</button>
+    }
+  </div>
+  <div class="cart-layout">
+    <div class="cart-items">
+      @for (item of cardService.getCarditem(); track item.id) {
+      <article class="cart-item">
+        <input
+          type="checkbox"
+          [checked]="item.is_select"
+          (change)="cardService.selectCarditem(item)"
+          aria-label="Select item"
+        />
+        <img [src]="item.image" [alt]="item.title" />
+        <div class="item-info">
+          <h3>{{item.title}}</h3>
+          <span>{{item.category}}</span
+          ><strong>{{item.price | currency:'USD'}}</strong>
+        </div>
+        <div class="quantity">
+          <button (click)="cardService.decrementqty(item)">−</button
+          ><b>{{item.qty}}</b
+          ><button (click)="cardService.incrementqty(item)">+</button>
+        </div>
+        <strong class="line-total"
+          >{{item.price * item.qty | currency:'USD'}}</strong
+        >
+        <button
+          class="remove"
+          (click)="cardService.removecarditem(item)"
+          aria-label="Remove item"
+        >
+          ×
+        </button>
+      </article>
+      }
+    </div>
+    <aside class="summary">
+      <span>Order summary</span>
+      <h2>Total</h2>
+      <div class="total">{{cardService.getcardtotal() | currency:'USD'}}</div>
+      <p>Only selected items are included.</p>
+      <a routerLink="/paynow" class="dark-button">Proceed to checkout</a>
+    </aside>
+  </div>
+  }
+</section>

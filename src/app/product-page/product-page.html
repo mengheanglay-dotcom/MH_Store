@@ -1,0 +1,43 @@
+<section class="shop-page container py-5">
+  <div class="shop-header">
+    <div>
+      <span class="section-label">ISNAV collection</span>
+      <h1 class="page-title mt-2">Shop All Products</h1>
+      <p>Find your next favorite piece.</p>
+    </div>
+    <div class="shop-tools">
+      <div class="search-box">
+        <span>⌕</span
+        ><input [(ngModel)]="search" placeholder="Search products..." />
+      </div>
+      <select [(ngModel)]="category">
+        <option value="all">All categories</option>
+        @for (item of categories; track item) {
+        <option [value]="item">{{item}}</option>
+        }
+      </select>
+      <select [(ngModel)]="sort">
+        <option value="featured">Featured</option>
+        <option value="low">Price: Low to high</option>
+        <option value="high">Price: High to low</option>
+        <option value="name">Name A-Z</option>
+      </select>
+    </div>
+  </div>
+
+  <p class="result-count">{{ filteredProducts.length }} products</p>
+  <div class="product-grid">
+    @for (item of filteredProducts; track item.id) {
+    <app-products
+      [product]="item"
+      (onAddtoCard)="addtocard($event)"
+    ></app-products>
+    }
+  </div>
+  @if (filteredProducts.length === 0) {
+  <div class="no-results">
+    <h3>No products found</h3>
+    <p>Try another search or category.</p>
+  </div>
+  }
+</section>

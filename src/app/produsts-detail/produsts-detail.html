@@ -1,0 +1,26 @@
+<section class="detail-page container py-5">
+  @if (product.title) {
+  <a routerLink="/products" class="back-link">← Back to shop</a>
+  <div class="detail-card mt-3">
+    <div class="detail-image">
+      <img [src]="product.image" [alt]="product.title" /><span
+        >{{product.category}}</span
+      >
+    </div>
+    <div class="detail-info">
+      <span class="section-label">ISNAV product</span>
+      <h1 class="page-title">{{product.title}}</h1>
+      <div class="rating">★★★★★ <small>Premium selection</small></div>
+      <p>{{product.description}}</p>
+      <div class="detail-price">{{product.price | currency:'USD'}}</div>
+      <div class="detail-actions">
+        <button class="buy-button" (click)="addtocard(product)">
+          Add to cart</button
+        ><a routerLink="/card" class="view-cart">View cart</a>
+      </div>
+    </div>
+  </div>
+  } @else {
+  <div class="loading-state">Loading product...</div>
+  }
+</section>

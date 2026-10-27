@@ -1,0 +1,49 @@
+<section class="contact-page container py-5">
+  <div class="contact-head text-center">
+    <span class="section-label">We are here for you</span>
+    <h1 class="page-title mt-2">Let's talk.</h1>
+    <p>Questions, feedback or just want to say hello? Send us a message.</p>
+  </div>
+  <div class="contact-layout">
+    <form
+      class="contact-card"
+      (submit)="$event.preventDefault(); submitted=true"
+    >
+      <label>Name<input required placeholder="Your name" /></label
+      ><label
+        >Email<input
+          required
+          type="email"
+          placeholder="you@example.com" /></label
+      ><label
+        >Message<textarea
+          required
+          rows="5"
+          placeholder="How can we help?"
+        ></textarea></label
+      ><button class="send-button">Send message</button>@if(submitted){
+      <p class="success">Message received. We'll get back to you soon.</p>
+      }
+    </form>
+    <aside class="contact-info">
+      <span class="section-label">ISNAV studio</span>
+      <h2>Premium shopping,<br />made simple.</h2>
+      <div>
+        <b>Address</b>
+        <p>Beoung Keng Kong, Phnom Penh, Cambodia</p>
+      </div>
+      <div>
+        <b>Phone</b>
+        <p>+855 078 5838 583</p>
+      </div>
+      <div>
+        <b>Email</b>
+        <p>isnav@gmail.com</p>
+      </div>
+      <div>
+        <b>Hours</b>
+        <p>Mon – Sat · 8:00 AM – 9:00 PM</p>
+      </div>
+    </aside>
+  </div>
+</section>

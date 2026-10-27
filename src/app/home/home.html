@@ -1,0 +1,21 @@
+<app-slide></app-slide>
+
+<section class="home-section container py-5">
+  <div class="section-head">
+    <div>
+      <span class="section-label">Curated collection</span>
+      <h1 class="page-title mt-2">Featured Products</h1>
+      <p>Quality pieces selected for a cleaner, more premium lifestyle.</p>
+    </div>
+    <a routerLink="/products" class="outline-button">View all products</a>
+  </div>
+
+  <div class="product-grid">
+    @for (item of productService.getProduct().slice(0, 8); track item.id) {
+    <app-products
+      [product]="item"
+      (onAddtoCard)="addtocard($event)"
+    ></app-products>
+    }
+  </div>
+</section>

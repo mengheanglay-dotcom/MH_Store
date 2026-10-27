@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/styles.css"],
+  "sourcesContent": ["@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');\n\n:root {\n  --black: #111111;\n  --black-soft: #1c1c1c;\n  --white: #ffffff;\n  --muted: #6f6f6f;\n  --border: #e5e5e5;\n  --surface: #f6f6f4;\n  --shadow: 0 18px 45px rgba(0,0,0,.08);\n}\n\n* { box-sizing: border-box; }\nhtml { scroll-behavior: smooth; }\nbody {\n  margin: 0;\n  font-family: 'DM Sans', sans-serif;\n  color: var(--black);\n  background: #fafafa;\n}\na { color: inherit; }\nbutton, input, select, textarea { font: inherit; }\n.section-label {\n  color: var(--muted);\n  font-size: .72rem;\n  font-weight: 800;\n  letter-spacing: .18em;\n  text-transform: uppercase;\n}\n.page-title { font-family: 'Playfair Display', serif; font-weight: 700; }\n"],
+  "mappings": ";;;AAEA;AACE,WAAS;AACT,gBAAc;AACd,WAAS;AACT,WAAS;AACT,YAAU;AACV,aAAW;AACX,YAAU,EAAE,KAAK,KAAK,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnC;AAEA;AAAI,cAAY;AAAY;AAC5B;AAAO,mBAAiB;AAAQ;AAChC;AACE,UAAQ;AACR,eAAa,SAAS,EAAE;AACxB,SAAO,IAAI;AACX,cAAY;AACd;AACA;AAAI,SAAO;AAAS;AACpB;AAAQ;AAAO;AAAQ;AAAW,QAAM;AAAS;AACjD,CAAC;AACC,SAAO,IAAI;AACX,aAAW;AACX,eAAa;AACb,kBAAgB;AAChB,kBAAgB;AAClB;AACA,CAAC;AAAa,eAAa,kBAAkB,EAAE;AAAO,eAAa;AAAK;",
+  "names": []
+}

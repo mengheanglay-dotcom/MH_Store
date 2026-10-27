@@ -1,0 +1,35 @@
+<article class="product-card">
+  <div class="product-image-wrap">
+    <span class="category-tag">{{ product.category }}</span>
+    <img
+      [src]="product.image"
+      [alt]="product.title"
+      class="product-image"
+      [routerLink]="['/productsdetail']"
+      [queryParams]="{product_id:product.id}"
+    />
+  </div>
+
+  <div class="product-content">
+    <a
+      class="product-title"
+      [routerLink]="['/productsdetail']"
+      [queryParams]="{product_id:product.id}"
+      >{{ product.title }}</a
+    >
+    <p class="product-description">{{ product.description }}</p>
+    <div class="product-bottom">
+      <div>
+        <div class="product-price">{{ product.price | currency:'USD' }}</div>
+        <div class="product-khr">{{ product.price | toKHR }}</div>
+      </div>
+      <button
+        class="add-button"
+        (click)="addtocard(product)"
+        aria-label="Add to cart"
+      >
+        +
+      </button>
+    </div>
+  </div>
+</article>

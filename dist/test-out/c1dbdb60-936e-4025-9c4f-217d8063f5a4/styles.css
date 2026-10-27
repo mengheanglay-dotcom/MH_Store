@@ -1,0 +1,52 @@
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap";
+
+/* src/styles.css */
+:root {
+  --black: #0b0b0c;
+  --black-soft: #151517;
+  --gold: #c9a227;
+  --gold-light: #e7c85a;
+  --cream: #f7f5ef;
+  --white: #ffffff;
+  --muted: #737373;
+  --border: #e7e3d8;
+  --shadow: 0 16px 45px rgba(0,0,0,.08);
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--black);
+  background: #faf9f6;
+}
+a {
+  color: inherit;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+.section-label {
+  color: var(--gold);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.page-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+}
+.gold-text {
+  color: var(--gold);
+}
+
+/* angular:styles/global:styles */
+/*# sourceMappingURL=styles.css.map */
